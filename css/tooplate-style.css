@@ -346,9 +346,10 @@ select.tm-select::-ms-expand { display: none; }
     justify-content: center;
 }
 
-.tm-bg-video { 
-	position: relative; 
-	padding-top: 515px;
+.image-recomended {
+	width: 90px; 
+    height: 85px; 
+    object-fit: cover;
 }
 
 
