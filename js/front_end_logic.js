@@ -1,19 +1,17 @@
-function initJs(){
+function initJs() {
     var script = document.createElement('script');
     script.type = 'text/javascript';
     document.body.appendChild(script);
-} 
+}
 
-function getInputPlaces(){
-    var places =  document.getElementById('inputCity').value;
+function getInputPlaces() {
+    var places = document.getElementById('inputCity').value;
     places = places.replace(/,/g, '');
     return places.split(" ");
 }
 
-
-
 //допишу ще вивід погоди і іконок
-function addPacesToList(name){
+function addPacesToList(name) {
     var layout = document.getElementById('placesList');
     var row = document.createElement("p");
     var titleImg = document.createElement("img");
@@ -32,36 +30,34 @@ function addPacesToList(name){
     row.appendChild(tileContainer);
     //row.appendChild()
     layout.appendChild(row);
-    
+
 }
 
-
-
-function showTop(){
+function showTop() {
     getInputPlaces().forEach(el => addPacesToList(el));
 }
 
-function initOnClick(){
-    document.getElementById('getResult').addEventListener('click', function() {
+function initOnClick() {
+    document.getElementById('getResult').addEventListener('click', function () {
         showTop();
     });
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
 
 
-                //Initialize js
-                initJs();  
+    //Initialize js
+    initJs();
 
-                // Date Picker
-                const pickerFrom = datepicker('#inputCheckIn');
-                const pickerTo = datepicker('#inputCheckOut');
+    // Date Picker
+    const pickerFrom = datepicker('#inputCheckIn');
+    const pickerTo = datepicker('#inputCheckOut');
 
-               
 
-                initOnClick();
 
-                // Update the current year in copyright
-                $('.tm-current-year').text(new Date().getFullYear());                           
-            });
+    initOnClick();
+
+    // Update the current year in copyright
+    $('.tm-current-year').text(new Date().getFullYear());
+});
 
