@@ -44,17 +44,12 @@ function initOnClick() {
 }
 
 $(document).ready(function () {
-
-
     //Initialize js
     initJs();
 
     // Date Picker
     const pickerFrom = datepicker('#inputCheckIn');
     const pickerTo = datepicker('#inputCheckOut');
-
-
-    getCoords('Drphobych');
 
     initOnClick();
 
