@@ -35,7 +35,7 @@ Math.floor(1000-((Math.abs(feels_like-22) + Math.sqrt(100*((rain + snow))/24) + 
 
 ## Developers
 
-This project was developed for **hackaton 2020** by
+This project was developed for **hackaton 2020** by  
 [ChaosGuru](https://github.com/ChaosGuru) - api parsing and some logic  
 [AndrewKisyk](https://github.com/AndrewKisyk) - api and front-end  
 [lvivct](https://github.com/lvivct) - project logic  
