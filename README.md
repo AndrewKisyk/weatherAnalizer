@@ -1,4 +1,6 @@
 # Weather Analizer
+Category: travel
+
 It is an app for finding best places to rest.
 
 Currently under development.
