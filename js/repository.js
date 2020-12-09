@@ -25,11 +25,12 @@ function getCoords(place, output=addPacesToList, callback = loadWeather){
 
 
 function parseWeather(data, output, name) {
-    // var myjson = JSON.stringify(data["daily"], null, 2);
-    // console.log(myjson);
-    days = data["daily"]
-    day =  Promise.method(JSON.parse(data["daily"]));
-    console.log(day.pressure)
+
+    var myjson = JSON.stringify(data["daily"][0], null, 2);
+    console.log(myjson);
+    
+    let days = data["daily"]
+
     let fomula = (feels_like, rain, snow, wind_speed, clouds) => (1000-((Math.abs(feels_like-22) + Math.sqrt(100*((rain + snow))/24) + Math.pow(wind_speed/12, 2))*10 + clouds));
 
     // get ranks for current place
@@ -42,8 +43,9 @@ function parseWeather(data, output, name) {
             days[day]["snow"] ? days[day]["snow"] : 0,
             days[day]["wind_speed"],
             days[day]["clouds"]));
+    }
 
-    output(ranks[0], name, days[0], days[0]["temp"], days[0]["humidity"], days["pressure"]);
+    output(ranks[0], name, days[0]["weather"][0]["icon"], days[0]["temp"]["day"], days[0]["humidity"], days[0]["pressure"]);
         // weather[day] = [
         //     days[day]["feels_like"]["day"],
         //     days[day]["rain"] ? days[day]["rain"] : 0,
@@ -51,16 +53,11 @@ function parseWeather(data, output, name) {
         //     days[day]["wind_speed"],
         //     days[day]["clouds"]
         // ]
-    }
 
     // console.log("feels_like | rain | snow | wind_speed | clouds");
     // for (let day = 0; day < 7; day++ ) {
     //     console.log(ranks[day], weather[day]);
     // }
 
-    // get already ranked places
-
-
-    // display in different order
     
 }
