@@ -1,19 +1,17 @@
-function initJs(){
+function initJs() {
     var script = document.createElement('script');
     script.type = 'text/javascript';
     document.body.appendChild(script);
-} 
+}
 
-function getInputPlaces(){
-    var places =  document.getElementById('inputCity').value;
+function getInputPlaces() {
+    var places = document.getElementById('inputCity').value;
     places = places.replace(/,/g, '');
     return places.split(" ");
 }
 
-
-
 //допишу ще вивід погоди і іконок
-function addPacesToList(name){
+function addPacesToList(name) {
     var layout = document.getElementById('placesList');
     var row = document.createElement("p");
     var titleImg = document.createElement("img");
@@ -32,47 +30,44 @@ function addPacesToList(name){
     row.appendChild(tileContainer);
     //row.appendChild()
     layout.appendChild(row);
+<<<<<<< HEAD
     
 }
 
- function getCoords(place){
-    const geocoder = new google.maps.Geocoder();
-     geocoder.geocode({ address: place }, (results, status) => {
-    if (status === "OK") {   
-        console.log(results[0].geometry.location.lat()); //широта
-        console.log(results[0].geometry.location.lng()); //довгота
-        return results;
-    } else {
-      alert("Geocode was not successful for the following reason: " + status);
-      return null;
-    }
-  });
- }
+=======
+>>>>>>> f4fd4500ba5b6e31c3285ef1f5ee780d52fbbecc
 
+}
 
-function showTop(){
+function showTop() {
     getInputPlaces().forEach(el => addPacesToList(el));
 }
 
-function initOnClick(){
-    document.getElementById('getResult').addEventListener('click', function() {
+function initOnClick() {
+    document.getElementById('getResult').addEventListener('click', function () {
         showTop();
     });
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
 
 
-                //Initialize js
-                initJs();  
+    //Initialize js
+    initJs();
 
-                // Date Picker
-                const pickerFrom = datepicker('#inputCheckIn');
-                const pickerTo = datepicker('#inputCheckOut');
+    // Date Picker
+    const pickerFrom = datepicker('#inputCheckIn');
+    const pickerTo = datepicker('#inputCheckOut');
 
+
+<<<<<<< HEAD
                 getCoords('Drphobych');
+=======
 
-                // Update the current year in copyright
-                $('.tm-current-year').text(new Date().getFullYear());                           
-            });
+    initOnClick();
+>>>>>>> f4fd4500ba5b6e31c3285ef1f5ee780d52fbbecc
+
+    // Update the current year in copyright
+    $('.tm-current-year').text(new Date().getFullYear());
+});
 
