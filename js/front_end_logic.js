@@ -11,8 +11,7 @@ function getInputPlaces() {
 }
 
 //допишу ще вивід погоди і іконок
-function addPacesToList(rank, name, icon, temperatureVal, humidityVal, pressureVal) {
-    console.log(arguments);
+function addPacesToList(rank, name, icon, temperatureVal, humidityVal, pressureVal, day) {
     var layout = document.getElementById('placesList');
     var row = document.createElement("p");
     var numberContainer = document.createElement("div");
@@ -25,6 +24,10 @@ function addPacesToList(rank, name, icon, temperatureVal, humidityVal, pressureV
     var weatherIcon = document.createElement("img");
 
     row.style.order = rank.toString();
+    if (layout.dataset.currentDay !== day.toString()) {
+        row.hidden = true;
+    }
+    row.dataset.day = day;
     row.className = "media tm-media tm-recommended-item";
     numberContainer.className = "top-number-container text-uppercase tm-font-semibold tm-sidebar-item-title";
     number.className = "number-container";
@@ -86,3 +89,15 @@ $(document).ready(function () {
     $('.tm-current-year').text(new Date().getFullYear());
 });
 
+function disDay(day) {
+    let layout = document.getElementById('placesList').children;
+    
+    for (let i = 0; i < layout.length; ++i) {
+        if (layout[i].dataset.day === day.toString()) {
+            layout[i].hidden = false;
+        }
+        else {
+            layout[i].hidden = true;
+        }
+    }
+}
