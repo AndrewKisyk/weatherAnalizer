@@ -67,8 +67,8 @@ https://www.tooplate.com/view/2095-level
                   </div>
                 </div>
                 <div class="form-row clearfix pl-2 pr-2 tm-fx-col-xs">
-                  <p class="tm-margin-b-0">Set "from" or "to", if you need one day!</p>
-                  <a href="#" class="ie-10-ml-auto ml-auto mt-1 tm-font-semibold tm-color-primary">Need Help?</a>
+                  <!-- <p class="tm-margin-b-0">Set "from" or "to", if you need one day!</p> -->
+                  <!-- <a href="#" class="ie-10-ml-auto ml-auto mt-1 tm-font-semibold tm-color-primary">Need Help?</a> -->
                 </div>
               </form>
             </div>
@@ -100,13 +100,13 @@ https://www.tooplate.com/view/2095-level
         
         <div class="ie-container-width-fix">
           <div class="d-flex flex-row bd-highlight justify-content-between mb-3">
-          <a id="first" class="btn-primary"><t id="first_l" class="tm-color-white">Go to result</t></a>
-          <a id="second" class=" btn-primary "><t id="second_l" class="tm-color-white">Go to result</t></a>
-          <a id="third" class="btn-primary"><t id="third_l" class="tm-color-white">Go to result</t></a>
-          <a id="fourth" class="btn-primary"><t id="fourth_l" class="tm-color-white">Go to result</t></a>
-          <a id="fiveth" class="btn-primary"><t id="fiveth_l" class="tm-color-white">Go to result</t></a>
-          <a id="sixth" class="btn-primary"><t id="sixth_l" class="tm-color-white">Go to result</t></a>
-          <a id="seventh" class="btn-primary"><t id="seventh_l" class="tm-color-white">Go to result</t></a>
+          <a id="first" class="btn-primary" onclick="disDay(0);"><t id="first_l" class="tm-color-white">Go to result</t></a>
+          <a id="second" class=" btn-primary " onclick="disDay(1);"><t id="second_l" class="tm-color-white">Go to result</t></a>
+          <a id="third" class="btn-primary" onclick="disDay(2);"><t id="third_l" class="tm-color-white">Go to result</t></a>
+          <a id="fourth" class="btn-primary" onclick="disDay(3);"><t id="fourth_l" class="tm-color-white">Go to result</t></a>
+          <a id="fiveth" class="btn-primary" onclick="disDay(4);"><t id="fiveth_l" class="tm-color-white">Go to result</t></a>
+          <a id="sixth" class="btn-primary" onclick="disDay(5);"><t id="sixth_l" class="tm-color-white">Go to result</t></a>
+          <a id="seventh" class="btn-primary" onclick="disDay(6);"><t id="seventh_l" class="tm-color-white">Go to result</t></a>
         </div>
           <div class="ie-container-width-fix">
             <div class="tm-bg-primary tm-sidebar-pad">
@@ -114,7 +114,7 @@ https://www.tooplate.com/view/2095-level
               <p class="tm-color-white tm-margin-b-0 tm-font-light">According to researches at the first place is the
                 beast weather for human.</p>
             </div>
-            <div id="placesList" class="ie-container-width-fix-2">
+            <div id="placesList" class="ie-container-width-fix-2" data-current-day="0">
               <!--Theoutpus is hear -->
             </div>
           </div>
