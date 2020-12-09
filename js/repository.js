@@ -8,7 +8,7 @@ function loadWeather(lat, lon, output, place, callback = parseWeather){
     let data = fetch(url).then(response => response.json()).then(res => callback(res, output, place));
 }
 
-function getCoords(place, output, callback = loadWeather){
+function getCoords(place, output=addPacesToList, callback = loadWeather){
     const geocoder = new google.maps.Geocoder();
 
     geocoder.geocode({ address: place }, (results, status) => {
@@ -43,7 +43,7 @@ function parseWeather(data, output, name) {
             days[day]["wind_speed"],
             days[day]["clouds"]));
 
-    output(ranks[0], name, day, days[0]["temp"], days[0]["humidity"], days["pressure"]);
+    output(ranks[0], name, days[0], days[0]["temp"], days[0]["humidity"], days["pressure"]);
         // weather[day] = [
         //     days[day]["feels_like"]["day"],
         //     days[day]["rain"] ? days[day]["rain"] : 0,

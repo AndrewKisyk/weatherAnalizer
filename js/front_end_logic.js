@@ -59,7 +59,7 @@ function addPacesToList(rank, name, icon, temperatureVal, humidityVal, pressureV
 
 function showTop() {
     var count = 1;
-    getInputPlaces().forEach(el => {getCoords(el, addPacesToList()); count++;});
+    getInputPlaces().forEach(el => {getCoords(el); count++;});
 }
 
 function initOnClick() {
