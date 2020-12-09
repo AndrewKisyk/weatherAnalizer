@@ -5,7 +5,7 @@ Currently under development.
 
 This site is fully static.
 
-[WebSite](https://hackaton-42a97.web.app/) 
+[Web site](https://hackaton-42a97.web.app/) 
 
 ## Usage
 At first in input bar you write place or places with comma in between.
@@ -17,6 +17,10 @@ You can find specific formula for rank cumputing later.
 List is created in the way that top first place is the best for visiting.
 
 You can filter places by differnt days during the week.
+
+## Used API
+[Geocoding API](https://developers.google.com/maps/documentation/geocoding/overview)
+[Weather API](https://openweathermap.org/api)
 
 ## Formula for ranking
 
