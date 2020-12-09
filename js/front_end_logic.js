@@ -107,13 +107,13 @@ function setUpDateLabels() {
     //String(today.getDate()).padStart(2, '0');
     var dd =today.getDate();
     var mm = String(today.getMonth() + 1).padStart(2, '0');
-    document.getElementById('first_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
+    document.getElementById('first_l').innerHTML = String(dd).padStart(2, '0') + '/' +mm;
     document.getElementById('second_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
-    document.getElementById('third_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
-    document.getElementById('fourth_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
-    document.getElementById('fiveth_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
-    document.getElementById('sixth_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
-    document.getElementById('seventh_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
+    document.getElementById('third_l').innerHTML = String(dd+2).padStart(2, '0') + '/' +mm;
+    document.getElementById('fourth_l').innerHTML = String(dd+3).padStart(2, '0') + '/' +mm;
+    document.getElementById('fiveth_l').innerHTML = String(dd+4).padStart(2, '0') + '/' +mm;
+    document.getElementById('sixth_l').innerHTML = String(dd+5).padStart(2, '0') + '/' +mm;
+    document.getElementById('seventh_l').innerHTML = String(dd+6).padStart(2, '0') + '/' +mm;
 }
 
 $(document).ready(function () {
