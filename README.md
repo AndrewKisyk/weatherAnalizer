@@ -5,6 +5,8 @@ Currently under development.
 
 This site is fully static.
 
+[WebSite](https://hackaton-42a97.web.app/) 
+
 ## Usage
 At first in input bar you write place or places with comma in between.
 
