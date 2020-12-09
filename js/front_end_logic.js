@@ -86,13 +86,13 @@ function setUpDateLabels() {
     //String(today.getDate()).padStart(2, '0');
     var dd =today.getDate();
     var mm = String(today.getMonth() + 1).padStart(2, '0');
-    document.getElementById('first_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
+    document.getElementById('first_l').innerHTML = String(dd+0).padStart(2, '0') + '/' +mm;
     document.getElementById('second_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
-    document.getElementById('third_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
-    document.getElementById('fourth_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
-    document.getElementById('fiveth_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
-    document.getElementById('sixth_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
-    document.getElementById('seventh_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
+    document.getElementById('third_l').innerHTML = String(dd+2).padStart(2, '0') + '/' +mm;
+    document.getElementById('fourth_l').innerHTML = String(dd+3).padStart(2, '0') + '/' +mm;
+    document.getElementById('fiveth_l').innerHTML = String(dd+4).padStart(2, '0') + '/' +mm;
+    document.getElementById('sixth_l').innerHTML = String(dd+5).padStart(2, '0') + '/' +mm;
+    document.getElementById('seventh_l').innerHTML = String(dd+6).padStart(2, '0') + '/' +mm;
 }
 
 $(document).ready(function () {
@@ -104,8 +104,6 @@ $(document).ready(function () {
 
     const pickerTo = datepicker('#inputCheckOut');
     setUpDateLabels();
-    
-
     initOnClick();
     
     // Update the current year in copyright
@@ -113,7 +111,10 @@ $(document).ready(function () {
 });
 
 function disDay(day) {
-    let layout = document.getElementById('placesList').children;
+    let ls = document.getElementById('placesList');
+    let layout = ls.children;
+
+    ls.dataset.currentDay = day.toString();
     
     for (let i = 0; i < layout.length; ++i) {
         if (layout[i].dataset.day === day.toString()) {
