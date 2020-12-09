@@ -28,7 +28,7 @@ function parseWeather(data, output, name) {
     // var myjson = JSON.stringify(data["daily"], null, 2);
     // console.log(myjson);
     days = data["daily"]
-    day = JSON.stringify(data["daily"], null, 2);
+    day =  Promise.method(JSON.parse(data["daily"]));
     console.log(day.pressure)
     let fomula = (feels_like, rain, snow, wind_speed, clouds) => (1000-((Math.abs(feels_like-22) + Math.sqrt(100*((rain + snow))/24) + Math.pow(wind_speed/12, 2))*10 + clouds));
 

@@ -23,7 +23,7 @@ function addPacesToList(rank, name, icon, temperatureVal, humidityVal, pressureV
     var pressure = document.createElement("h4");
     var weatherIcon = document.createElement("img");
 
-    layout.style.order = rank;
+    row.style.order = rank;
     row.className = "media tm-media tm-recommended-item";
     numberContainer.className = "top-number-container text-uppercase tm-font-semibold tm-sidebar-item-title";
     number.className = "number-container";
