@@ -5,9 +5,12 @@ Currently under development.
 
 This site is fully static.
 
-[Web site](https://hackaton-42a97.web.app/) 
+Choosen category is traveling.
 
 ## Usage
+
+Visit this [web site](https://hackaton-42a97.web.app/) 
+
 At first in input bar you write place or places with comma in between.
 
 Then, after pressing the button you get list of places ranked based on weather in them during the week.
@@ -31,6 +34,6 @@ Math.floor(1000-((Math.abs(feels_like-22) + Math.sqrt(100*((rain + snow))/24) + 
 ## Developers
 
 This project was developed for **hackaton 2020** by
-[ChaosGuru](https://github.com/ChaosGuru)
-[AndrewKisyk](https://github.com/AndrewKisyk)
-[lvivct](https://github.com/lvivct)
+[ChaosGuru](https://github.com/ChaosGuru) - api parsing and some logic  
+[AndrewKisyk](https://github.com/AndrewKisyk) - api and front-end  
+[lvivct](https://github.com/lvivct) - project logic  
