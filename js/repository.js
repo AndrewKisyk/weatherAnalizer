@@ -8,7 +8,7 @@ function loadWeather(lat, lon, output, place, callback = parseWeather){
     let data = fetch(url).then(response => response.json()).then(res => callback(res, output, place));
 }
 
-function getCoords(place, output, callback = loadWeather){
+function getCoords(place, output=addPacesToList, callback = loadWeather){
     const geocoder = new google.maps.Geocoder();
 
     geocoder.geocode({ address: place }, (results, status) => {
