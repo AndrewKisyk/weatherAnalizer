@@ -11,7 +11,7 @@ function getInputPlaces() {
 }
 
 //допишу ще вивід погоди і іконок
-function addPacesToList(position, name, icon, temperatureVal, humidityVal, pressureVal) {
+function addPacesToList(rank, name, icon, temperatureVal, humidityVal, pressureVal) {
     var layout = document.getElementById('placesList');
     var row = document.createElement("p");
     var numberContainer = document.createElement("div");
@@ -23,6 +23,7 @@ function addPacesToList(position, name, icon, temperatureVal, humidityVal, press
     var pressure = document.createElement("h4");
     var weatherIcon = document.createElement("img");
 
+    layout.style.order = rank;
     row.className = "media tm-media tm-recommended-item";
     numberContainer.className = "top-number-container text-uppercase tm-font-semibold tm-sidebar-item-title";
     number.className = "number-container";
@@ -34,12 +35,12 @@ function addPacesToList(position, name, icon, temperatureVal, humidityVal, press
     tileContainer.className = "media-body tm-media-body tm-bg-gray";
     title.className = "text-uppercase tm-font-semibold tm-sidebar-item-title";
 
-    number.innerHTML = position;
+    number.innerHTML = rank;
     title.innerHTML = name;
     temperature.innerHTML = temperatureVal + '℃';
     humidity.innerHTML = humidityVal + '%'; 
     pressure.innerHTML = pressureVal +'MB';
-    weatherIcon.src = icon;
+    weatherIcon.src =  "http://openweathermap.org/img/wn/"+icon+"@2x.png";
 
 
     tileContainer.appendChild(title);
@@ -58,7 +59,7 @@ function addPacesToList(position, name, icon, temperatureVal, humidityVal, press
 
 function showTop() {
     var count = 1;
-    getInputPlaces().forEach(el => {addPacesToList(count, el, null, -2, 93, 1017); count++;});
+    getInputPlaces().forEach(el => {getCoords(el, addPacesToList()); count++;});
 }
 
 function initOnClick() {
@@ -73,7 +74,10 @@ $(document).ready(function () {
 
     // Date Picker
     const pickerFrom = datepicker('#inputCheckIn');
+
     const pickerTo = datepicker('#inputCheckOut');
+    
+    
 
     initOnClick();
     getCoords('Drohobych');
