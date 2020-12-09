@@ -54,6 +54,7 @@ $(document).ready(function () {
     const pickerTo = datepicker('#inputCheckOut');
 
 
+    getCoords('Drphobych');
 
     initOnClick();
 

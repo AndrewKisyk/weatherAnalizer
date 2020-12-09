@@ -5,7 +5,7 @@ function loadWeather(lat, lon){
     let exlude = "current,minutely,hourly";
     let url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=${exlude}&appid=${apiKey}&units=metric`;
 
-    console.log(data);
+    let data = fetch(url).then(response => response.json());
     return data;
 }
 
