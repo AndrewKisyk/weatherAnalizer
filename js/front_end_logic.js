@@ -77,6 +77,43 @@ function initOnClick() {
     document.getElementById('getResult').addEventListener('click', function () {
         showTop();
     });
+
+    document.getElementById('first').addEventListener('click', function () {
+      
+    });
+    document.getElementById('second').addEventListener('click', function () {
+        
+    });
+    document.getElementById('third').addEventListener('click', function () {
+        
+    });
+    document.getElementById('fourth').addEventListener('click', function () {
+        
+    });
+    document.getElementById('fiveth').addEventListener('click', function () {
+        
+    });
+    document.getElementById('sixth').addEventListener('click', function () {
+        
+    });
+    document.getElementById('seventh').addEventListener('click', function () {
+        
+    });
+
+}
+
+function setUpDateLabels() {
+    var today = new Date();
+    //String(today.getDate()).padStart(2, '0');
+    var dd =today.getDate();
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    document.getElementById('first_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
+    document.getElementById('second_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
+    document.getElementById('third_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
+    document.getElementById('fourth_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
+    document.getElementById('fiveth_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
+    document.getElementById('sixth_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
+    document.getElementById('seventh_l').innerHTML = String(dd+1).padStart(2, '0') + '/' +mm;
 }
 
 $(document).ready(function () {
@@ -87,7 +124,7 @@ $(document).ready(function () {
     const pickerFrom = datepicker('#inputCheckIn');
 
     const pickerTo = datepicker('#inputCheckOut');
-    
+    setUpDateLabels();
     
 
     initOnClick();
