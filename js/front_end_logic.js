@@ -45,8 +45,6 @@ function initOnClick() {
 }
 
 $(document).ready(function () {
-
-
     //Initialize js
     initJs();
 
@@ -54,13 +52,7 @@ $(document).ready(function () {
     const pickerFrom = datepicker('#inputCheckIn');
     const pickerTo = datepicker('#inputCheckOut');
 
-
-        
-    getCoords('Drohobych', function(result){
-    console.log(result[0].geometry.location.lat());
-    });      
-    
-
+    initOnClick();
 
     // Update the current year in copyright
     $('.tm-current-year').text(new Date().getFullYear());
