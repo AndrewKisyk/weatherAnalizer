@@ -27,6 +27,7 @@ function parseWeather(data, output, name) {
     // console.log(myjson);
     
     let days = data["daily"]
+
     let fomula = (feels_like, rain, snow, wind_speed, clouds) => (1000-((Math.abs(feels_like-22) + Math.sqrt(100*((rain + snow))/24) + Math.pow(wind_speed/12, 2))*10 + clouds));
 
     // get ranks for current place
