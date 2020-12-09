@@ -35,6 +35,19 @@ function addPacesToList(name){
     
 }
 
+ function getCoords(place){
+    const geocoder = new google.maps.Geocoder();
+     geocoder.geocode({ address: place }, (results, status) => {
+    if (status === "OK") {   
+        console.log(results[0].geometry.location.lat()); //широта
+        console.log(results[0].geometry.location.lng()); //довгота
+        return results;
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+      return null;
+    }
+  });
+ }
 
 
 function showTop(){
@@ -57,9 +70,7 @@ $(document).ready(function(){
                 const pickerFrom = datepicker('#inputCheckIn');
                 const pickerTo = datepicker('#inputCheckOut');
 
-               
-
-                initOnClick();
+                getCoords('Drphobych');
 
                 // Update the current year in copyright
                 $('.tm-current-year').text(new Date().getFullYear());                           
