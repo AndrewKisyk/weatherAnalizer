@@ -11,22 +11,44 @@ function getInputPlaces() {
 }
 
 //допишу ще вивід погоди і іконок
-function addPacesToList(name) {
+function addPacesToList(position, name, icon, temperatureVal, humidityVal, pressureVal) {
     var layout = document.getElementById('placesList');
     var row = document.createElement("p");
-    var titleImg = document.createElement("img");
+    var numberContainer = document.createElement("div");
+    var number = document.createElement("div");
     var tileContainer = document.createElement("div");
     var title = document.createElement("h4");
+    var temperature = document.createElement("h4");
+    var humidity = document.createElement("h4");
+    var pressure = document.createElement("h4");
+    var weatherIcon = document.createElement("img");
 
     row.className = "media tm-media tm-recommended-item";
-    titleImg.className = "image-recomended";
-    titleImg.alt = "Image";
+    numberContainer.className = "top-number-container text-uppercase tm-font-semibold tm-sidebar-item-title";
+    number.className = "number-container";
+    weatherIcon.className = "ml-auto p-3 icon-container";
+    temperature.className = "p-3";
+    humidity.className = "p-3";
+    pressure.className = "p-3";
+    
     tileContainer.className = "media-body tm-media-body tm-bg-gray";
     title.className = "text-uppercase tm-font-semibold tm-sidebar-item-title";
 
+    number.innerHTML = position;
     title.innerHTML = name;
+    temperature.innerHTML = temperatureVal + '℃';
+    humidity.innerHTML = humidityVal + '%'; 
+    pressure.innerHTML = pressureVal +'MB';
+    weatherIcon.src = icon;
+
 
     tileContainer.appendChild(title);
+    tileContainer.appendChild(weatherIcon);
+    tileContainer.appendChild(temperature);
+    tileContainer.appendChild(humidity);
+    tileContainer.appendChild(pressure);
+    numberContainer.appendChild(number);
+    row.appendChild(numberContainer);
     row.appendChild(tileContainer);
     //row.appendChild()
     layout.appendChild(row);
@@ -35,7 +57,8 @@ function addPacesToList(name) {
 
 
 function showTop() {
-    getInputPlaces().forEach(el => addPacesToList(el));
+    var count = 1;
+    getInputPlaces().forEach(el => {addPacesToList(count, el, null, -2, 93, 1017); count++;});
 }
 
 function initOnClick() {
@@ -53,7 +76,7 @@ $(document).ready(function () {
     const pickerTo = datepicker('#inputCheckOut');
 
     initOnClick();
-
+    getCoords('Drohobych');
     // Update the current year in copyright
     $('.tm-current-year').text(new Date().getFullYear());
 });
