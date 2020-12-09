@@ -9,16 +9,16 @@ function loadWeather(lat, lon){
     return data;
 }
 
-function getCoords(place){
+function getCoords(place, callback){
     const geocoder = new google.maps.Geocoder();
-     geocoder.geocode({ address: place }, (results, status) => {
+    geocoder.geocode({ address: place }, (results, status) => {
     if (status === "OK") {   
         console.log(results[0].geometry.location.lat()); //широта
         console.log(results[0].geometry.location.lng()); //довгота
-        return results;
+        callback(results);
     } else {
       alert("Geocode was not successful for the following reason: " + status);
-      return null;
+      callback(null);
     }
   });
  }

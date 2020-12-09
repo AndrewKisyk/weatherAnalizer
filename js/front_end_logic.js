@@ -30,14 +30,9 @@ function addPacesToList(name) {
     row.appendChild(tileContainer);
     //row.appendChild()
     layout.appendChild(row);
-<<<<<<< HEAD
-    
-}
-
-=======
->>>>>>> f4fd4500ba5b6e31c3285ef1f5ee780d52fbbecc
 
 }
+
 
 function showTop() {
     getInputPlaces().forEach(el => addPacesToList(el));
@@ -60,12 +55,12 @@ $(document).ready(function () {
     const pickerTo = datepicker('#inputCheckOut');
 
 
-<<<<<<< HEAD
-                getCoords('Drphobych');
-=======
+        
+    getCoords('Drohobych', function(result){
+    console.log(result[0].geometry.location.lat());
+    });      
+    
 
-    initOnClick();
->>>>>>> f4fd4500ba5b6e31c3285ef1f5ee780d52fbbecc
 
     // Update the current year in copyright
     $('.tm-current-year').text(new Date().getFullYear());
