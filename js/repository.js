@@ -27,4 +27,10 @@ function getCoords(place, callback = loadWeather){
 function parseWeather(data) {
     // var myjson = JSON.stringify(data, null, 2);
     console.log(data["daily"][0]);
+
+    // get already ranked places
+
+    // rank with new place
+
+    // display in different order
 }
