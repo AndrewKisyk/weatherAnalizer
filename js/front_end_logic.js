@@ -12,6 +12,7 @@ function getInputPlaces() {
 
 //допишу ще вивід погоди і іконок
 function addPacesToList(rank, name, icon, temperatureVal, humidityVal, pressureVal) {
+    console.log(arguments);
     var layout = document.getElementById('placesList');
     var row = document.createElement("p");
     var numberContainer = document.createElement("div");
@@ -23,7 +24,7 @@ function addPacesToList(rank, name, icon, temperatureVal, humidityVal, pressureV
     var pressure = document.createElement("h4");
     var weatherIcon = document.createElement("img");
 
-    layout.style.order = rank;
+    row.style.order = rank.toString();
     row.className = "media tm-media tm-recommended-item";
     numberContainer.className = "top-number-container text-uppercase tm-font-semibold tm-sidebar-item-title";
     number.className = "number-container";
@@ -59,7 +60,7 @@ function addPacesToList(rank, name, icon, temperatureVal, humidityVal, pressureV
 
 function showTop() {
     var count = 1;
-    getInputPlaces().forEach(el => {getCoords(el, addPacesToList()); count++;});
+    getInputPlaces().forEach(el => {getCoords(el, addPacesToList); count++;});
 }
 
 function initOnClick() {
